@@ -1,0 +1,47 @@
+# Next.js 15 Server-First, RSC, and SSR Best Practices
+
+- **Prefer Server Components:**
+  - By default, all components in the `app/` directory are server components. Use server components for data fetching, rendering, and logic whenever possible.
+  - Only use `"use client"` for components that require client-side interactivity (event handlers, state, browser APIs).
+  - Minimize the use of `useEffect` and client state; prefer derived state and server data.
+
+- **Optimize for SSR:**
+  - Use server-side rendering (SSR) for pages that require dynamic data or personalization.
+  - Use static rendering (SSG) for pages that can be pre-rendered at build time.
+  - Use the `generateStaticParams` and `generateMetadata` APIs for static and dynamic routes/metadata.
+  - Use the Metadata API to colocate SEO and social metadata with the route/page/component.
+  - Place metadata files (e.g., `opengraph-image.ts`, `twitter-image.ts`, `icon.ts`) in the same route segment for automatic meta tag generation.
+
+- **Data Fetching:**
+  - Fetch data in server components or route handlers for best performance and security.
+  - Use async/await in server components for data fetching.
+  - Use React's `cache` utility to memoize data fetching if needed in both page and metadata.
+  - Avoid fetching data in client components unless necessary for interactivity.
+
+- **Avoid Legacy Patterns:**
+  - Do not use `getServerSideProps`, `getStaticProps`, or `getInitialProps` in the App Router (`app/` directory).
+  - Do not use the `pages/` directory for new features; use the App Router exclusively.
+  - Do not use custom `_document.js` or `_app.js` in the App Router.
+
+- **Performance:**
+  - Use dynamic imports for non-critical client components.
+  - Optimize images with the Next.js `<Image />` component.
+  - Use streaming and partial rendering for large or slow-loading pages.
+  - Use route segment config to control static/dynamic rendering as needed.
+
+- **Colocation:**
+  - Colocate all route-specific logic, metadata, and assets in the relevant route segment folder.
+  - Place API route handlers in `app/api/`.
+
+- **Summary:**
+  - Server-first: default to server components, only use client components when necessary.
+  - Optimize for SSR and SSG using the App Router's APIs.
+  - Colocate metadata and assets for maintainability and SEO.
+  - Avoid legacy Next.js patterns in new code.
+
+For more, see the [Next.js 15 App Router and SSR docs](https://nextjs.org/docs/app/building-your-application/rendering/server-components).
+description: Next.js 15 Server-First, RSC, and SSR Best Practices
+globs:
+alwaysApply: true
+
+---

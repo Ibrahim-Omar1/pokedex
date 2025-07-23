@@ -1,0 +1,15 @@
+description: Code Style & Implementation
+globs:
+alwaysApply: true
+
+# Code Style & Implementation
+
+- Use TypeScript for all code. Prefer interfaces over types for object shapes.
+- Use functional, declarative programming. Avoid classes.
+- Use named exports for components and functions.
+- Use the "function" keyword for pure functions.
+- Use early returns and guard clauses for error handling.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable and function names (e.g., `isLoading`, `handleClick`).
+- Use the RORO (Receive an Object, Return an Object) pattern for functions with many parameters.
+- Place static content and interfaces at the end of files.

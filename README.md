@@ -18,26 +18,38 @@ A modern [Next.js](https://nextjs.org) 15 + [React 19](https://react.dev/) proje
 
 ## Project Structure
 
-```
+```text
 pokedex/
-  ├─ public/           # Static assets (SVGs, icons, etc)
+  ├─ public/                # Static assets (SVGs, icons, etc)
   ├─ src/
-  │   ├─ app/          # Next.js app directory (routing, pages, layouts)
-  │   ├─ lib/          # Utilities, helpers
-  │   └─ ...           # Other feature folders
-  ├─ .prettierrc       # Prettier config
-  ├─ .prettierignore   # Prettier ignore
-  ├─ eslint.config.mjs # ESLint flat config
-  ├─ package.json      # Scripts & dependencies
-  └─ README.md         # This file
+  │   ├─ app/               # Next.js App Router (routing, pages, layouts, API routes)
+  │   ├─ components/
+  │   │   ├─ ui/            # shadcn/ui components (atomic, reusable UI)
+  │   │   └─ features/      # Feature-specific components
+  │   ├─ hooks/             # Custom React hooks
+  │   ├─ lib/               # Utilities, helpers, API clients
+  │   ├─ types/             # TypeScript type definitions
+  │   └─ context/           # React context providers
+  ├─ .prettierrc            # Prettier config
+  ├─ .prettierignore        # Prettier ignore
+  ├─ eslint.config.mjs      # ESLint flat config
+  ├─ package.json           # Scripts & dependencies
+  └─ README.md              # This file
 ```
+
+**Notes:**
+
+- All UI primitives and design system components are in `src/components/ui` (powered by [shadcn/ui](https://ui.shadcn.com/)).
+- Feature-specific components go in `src/components/features`.
+- Custom hooks, context providers, and types are organized for scalability and clarity.
+- **All styling is handled by Tailwind CSS; no separate styles directory is needed.**
 
 ---
 
 ## UI & Styling
 
 - **Component Library:** [shadcn/ui](https://ui.shadcn.com/) for accessible, customizable React components.
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) for utility-first styling.
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) for utility-first styling. All global styles are managed via Tailwind's configuration and the main `globals.css` imported in `app/layout.tsx`.
 - **Fonts:** Uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to load [Geist](https://vercel.com/font).
 
 ---

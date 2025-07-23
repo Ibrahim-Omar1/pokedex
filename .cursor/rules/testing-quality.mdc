@@ -1,0 +1,15 @@
+# Testing & Quality
+
+- Write unit tests for business logic and hooks.
+- Use integration tests for complex components and pages.
+- Use end-to-end tests for critical user flows.
+- Ensure code is clean, well-documented, and follows the project's conventions.
+- Provide clear and concise comments for complex logic.
+- Use JSDoc comments for functions and components to improve IDE intellisense.
+- Keep the README and rules up-to-date with setup instructions and project overview.
+
+---
+
+description: Testing & Quality
+globs:
+alwaysApply: true

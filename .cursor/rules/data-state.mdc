@@ -1,0 +1,11 @@
+description: Data & State Management
+globs:
+alwaysApply: true
+
+# Data & State Management
+
+- Use React Server Components and Next.js SSR features where possible.
+- Minimize `use client`, `useEffect`, and `setState`; favor derived state and memoization.
+- Use Zod for schema validation and type inference.
+- Use TanStack React Query for data fetching and caching if needed.
+- Use Zustand for state management if global state is required.

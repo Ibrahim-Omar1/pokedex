@@ -1,0 +1,13 @@
+# UI & Accessibility
+
+- Use Tailwind classes for all styling; avoid custom CSS unless necessary.
+- Use shadcn/ui for UI primitives and accessible components.
+- Implement accessibility features: keyboard navigation, ARIA labels, roles, and color contrast.
+- Use responsive design with Tailwind's mobile-first approach.
+- Use dynamic imports for code splitting and lazy loading non-critical components.
+
+---
+
+description: UI & Accessibility
+globs:
+alwaysApply: true

@@ -1,0 +1,15 @@
+# Project Structure Guide
+
+- All source code is under `src/`.
+- Routing, layouts, and pages are in `src/app/` (Next.js App Router).
+- UI primitives and design system components are in `src/components/ui/` (powered by shadcn/ui).
+- Feature-specific components are in `src/components/features/`.
+- Custom React hooks are in `src/hooks/`.
+- Utilities and API clients are in `src/lib/`.
+- TypeScript type definitions are in `src/types/`.
+- React context providers are in `src/context/`.
+- All styling is handled by Tailwind CSS; no separate styles directory is needed.
+- Global styles are managed via Tailwind's config and `globals.css` in `app/layout.tsx`.
+  alwaysApply: true
+
+---

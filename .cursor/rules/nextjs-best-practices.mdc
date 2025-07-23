@@ -1,0 +1,79 @@
+# Next.js 15, React 19, shadcn/ui, and Tailwind CSS Best Practices
+
+This project follows strict best practices for Next.js 15, React 19, shadcn/ui, and Tailwind CSS. These rules are always applied:
+
+## Code Style & Structure
+
+- Use TypeScript for all code. Prefer interfaces over types for object shapes.
+- Use functional, declarative programming. Avoid classes.
+- Use named exports for components and functions.
+- Use lowercase with dashes for directory names (e.g., `components/auth-wizard`).
+- Place static content and interfaces at the end of files.
+- Use the "function" keyword for pure functions.
+- Use early returns and guard clauses for error handling.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable and function names (e.g., `isLoading`, `handleClick`).
+- Use the RORO (Receive an Object, Return an Object) pattern for functions with many parameters.
+
+## Project Structure
+
+- All source code is under `src/`.
+- Routing, layouts, and pages are in `src/app/` (Next.js App Router).
+- UI primitives and design system components are in `src/components/ui/` (powered by shadcn/ui).
+- Feature-specific components are in `src/components/features/`.
+- Custom React hooks are in `src/hooks/`.
+- Utilities and API clients are in `src/lib/`.
+- TypeScript type definitions are in `src/types/`.
+- React context providers are in `src/context/`.
+- All styling is handled by Tailwind CSS; no separate styles directory is needed.
+- Global styles are managed via Tailwind's config and `globals.css` in `app/layout.tsx`.
+
+## UI & Accessibility
+
+- Use Tailwind classes for all styling; avoid custom CSS unless necessary.
+- Use shadcn/ui for UI primitives and accessible components.
+- Implement accessibility features: keyboard navigation, ARIA labels, roles, and color contrast.
+- Use responsive design with Tailwind's mobile-first approach.
+- Use dynamic imports for code splitting and lazy loading non-critical components.
+
+## Naming & Conventions
+
+- Use auxiliary verbs for booleans (e.g., `isDisabled`, `hasError`).
+- Use lowercase with dashes for directories and files (e.g., `user-profile.tsx`).
+- Use `.config.ts`, `.test.ts`, `.context.tsx`, `.type.ts`, `.hook.ts` as appropriate for file extensions.
+- Favor named exports and avoid default exports for components and utilities.
+
+## Data & State
+
+- Use React Server Components and Next.js SSR features where possible.
+- Minimize `use client`, `useEffect`, and `setState`; favor derived state and memoization.
+- Use Zod for schema validation and type inference.
+- Use TanStack React Query for data fetching and caching if needed.
+- Use Zustand for state management if global state is required.
+
+## Error Handling
+
+- Handle errors and edge cases at the beginning of functions.
+- Use early returns for error conditions to avoid deep nesting.
+- Implement error boundaries for unexpected errors using `error.tsx` and `global-error.tsx`.
+- Use user-friendly error messages and proper error logging.
+
+## Testing & Quality
+
+- Write unit tests for business logic and hooks.
+- Use integration tests for complex components and pages.
+- Use end-to-end tests for critical user flows.
+- Ensure code is clean, well-documented, and follows the project's conventions.
+
+## Documentation
+
+- Provide clear and concise comments for complex logic.
+- Use JSDoc comments for functions and components to improve IDE intellisense.
+- Keep the README and rules up-to-date with setup instructions and project overview.
+
+For more, see [README.md](mdc:README.md) and [Cursor Next.js Rules](https://cursor.directory/rules/next.js).
+description:
+globs:
+alwaysApply: true
+
+---
