@@ -27,7 +27,8 @@ pokedex/
   │   │   ├─ ui/            # shadcn/ui components (atomic, reusable UI)
   │   │   └─ features/      # Feature-specific components
   │   ├─ hooks/             # Custom React hooks
-  │   ├─ lib/               # Utilities, helpers, API clients
+  │   ├─ lib/               # Utilities, helpers (NOT API clients)
+  │   ├─ services/          # API clients, service logic (e.g. pokemonApi.ts)
   │   ├─ types/             # TypeScript type definitions
   │   └─ context/           # React context providers
   ├─ .prettierrc            # Prettier config
@@ -42,6 +43,7 @@ pokedex/
 - All UI primitives and design system components are in `src/components/ui` (powered by [shadcn/ui](https://ui.shadcn.com/)).
 - Feature-specific components go in `src/components/features`.
 - Custom hooks, context providers, and types are organized for scalability and clarity.
+- **API clients and service logic should go in `src/services` (e.g. `src/services/pokemonApi.ts`).**
 - **All styling is handled by Tailwind CSS; no separate styles directory is needed.**
 
 ---

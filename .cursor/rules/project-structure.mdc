@@ -5,7 +5,8 @@
 - UI primitives and design system components are in `src/components/ui/` (powered by shadcn/ui).
 - Feature-specific components are in `src/components/features/`.
 - Custom React hooks are in `src/hooks/`.
-- Utilities and API clients are in `src/lib/`.
+- Utilities and helpers are in `src/lib/` (NOT API clients).
+- API clients and service logic are in `src/services/` (e.g. `src/services/pokemonApi.ts`).
 - TypeScript type definitions are in `src/types/`.
 - React context providers are in `src/context/`.
 - All styling is handled by Tailwind CSS; no separate styles directory is needed.
