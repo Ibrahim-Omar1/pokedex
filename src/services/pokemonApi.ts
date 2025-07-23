@@ -1,9 +1,7 @@
 import type { PokemonDetail, PokemonListResponse } from "@/types/pokemon";
-import { toast } from "sonner";
 
 /**
  * Base URL for the PokéAPI.
- * @type {string}
  */
 const BASE_URL = "https://pokeapi.co/api/v2";
 
@@ -26,9 +24,6 @@ export async function getPokemonList(limit = 20, offset = 0): Promise<PokemonLis
     return data;
   } catch (error) {
     console.error("Error fetching Pokemon list:", error);
-    if (typeof window !== "undefined") {
-      toast.error("Error fetching Pokémon list");
-    }
     throw error;
   }
 }
@@ -51,20 +46,6 @@ export async function getPokemonDetails(nameOrId: string | number): Promise<Poke
     return data;
   } catch (error) {
     console.error("Error fetching Pokemon details:", error);
-    if (typeof window !== "undefined") {
-      toast.error("Error fetching Pokémon details");
-    }
     throw error;
   }
 }
-
-/**
- * Extracts the Pokémon ID from a PokéAPI URL.
- * @param {string} url - The URL to extract the ID from.
- * @returns {number} The extracted Pokémon ID, or 0 if not found.
- */
-export function extractIdFromUrl(url: string): number {
-  const matches = url.match(/\/pokemon\/(\d+)\/?/);
-  return matches ? Number.parseInt(matches[1], 10) : 0;
-}
- 

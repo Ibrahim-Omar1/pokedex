@@ -19,6 +19,26 @@ const nextConfig: NextConfig = {
         pathname: "/media/**",
       },
     ],
+    minimumCacheTTL: 60 * 60 * 24 * 7, // Cache for 7 days
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  async redirects() {
+    return [
+      {
+        source: "/pagination",
+        has: [
+          {
+            type: "query",
+            key: "limit",
+            value: "(?!^[1-9]\\d*$).*", // Not a positive integer redirect to page 1
+          },
+        ],
+        destination: "/pagination?page=1",
+        permanent: true,
+      },
+    ];
   },
 };
 
