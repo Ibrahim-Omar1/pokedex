@@ -85,8 +85,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(geistSans.variable, geistMono.variable, "antialiased scroll-smooth")}>
-        {children}
-        <Toaster richColors position="top-center" />
+        <div className="min-h-screen bg-background">
+          <header className="border-b">
+            <div className="container mx-auto px-4 py-4">
+              <h1 className="text-2xl font-bold text-primary">Pokémon Browser</h1>
+            </div>
+          </header>
+          <main className="container mx-auto px-4 py-8">
+            {children}
+            <Toaster richColors position="top-center" />
+          </main>
+        </div>
       </body>
     </html>
   );

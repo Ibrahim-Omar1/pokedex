@@ -8,10 +8,9 @@
   "editor.formatOnSave": true,
   // Format with ESLint on save (if autofix is available)
   "editor.codeActionsOnSave": {
-    // "source.fixAll.eslint": "always",
+    "source.fixAll.eslint": "always",
     "source.organizeImports": "always",
     "source.removeUnused.ts": "always"
-    
   },
   // Optional: show Prettier status in the status bar
   "prettier.showStatus": true
