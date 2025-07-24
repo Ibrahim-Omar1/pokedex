@@ -12,7 +12,7 @@ interface PageProps {
  *
  * @param {PageProps} props - The component props.
  * @param {Promise<{ page?: string; limit?: string }>} props.searchParams - The search parameters promise containing pagination options.
- * @returns {JSX.Element} The pagination page with Pokémon grid and controls.
+ * @returns The pagination page with Pokémon grid and controls.
  */
 export default function PaginationPage({ searchParams }: PageProps) {
   return (

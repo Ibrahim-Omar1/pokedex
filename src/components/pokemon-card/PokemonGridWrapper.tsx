@@ -14,7 +14,7 @@ interface PokemonGridWrapperProps {
  *
  * @param {PokemonGridWrapperProps} props - The component props.
  * @param {Promise<{ page?: string; limit?: string }>} props.searchParams - The search parameters promise containing pagination options.
- * @returns {Promise<JSX.Element>} The Pokémon grid with pagination controls.
+ * @returns - The Pokémon grid with pagination controls.
  */
 export async function PokemonGridWrapper({ searchParams }: PokemonGridWrapperProps) {
   const { page, limit, offset } = await parsePaginationParams(searchParams);
