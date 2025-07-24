@@ -28,7 +28,7 @@ interface PageProps {
  * Generate static parameters for the first 20 Pokémon.
  * This pre-renders pages at build time for better performance and SEO.
  *
- * @returns {Promise<Array<{ name: string }>>} Array of Pokémon names for static generation.
+ * @returns - Array of Pokémon names for static generation.
  */
 export async function generateStaticParams() {
   try {
