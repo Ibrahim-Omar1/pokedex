@@ -1,11 +1,9 @@
+import { BackToListButton } from "@/components/navigation/BackToListButton";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getSprite } from "@/lib/sprites";
 import { getPokemonDetails, getPokemonList } from "@/services/pokemonApi";
-import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { cache } from "react";
 
 /**
@@ -66,19 +64,14 @@ export default async function PokemonDetailPage({ params }: PageProps) {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       <div className="flex items-center gap-4">
-        <Button variant="outline" size="sm" asChild>
-          <Link href="/pagination">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to List
-          </Link>
-        </Button>
+        <BackToListButton />
       </div>
 
       <Card>
         <CardHeader className="text-center">
           <div className="mx-auto mb-4">
             <Image
-              src={getSprite(pokemon.sprites) || "/placeholder.svg"}
+              src={getSprite(pokemon.sprites)}
               alt={pokemon.name}
               width={200}
               height={200}
