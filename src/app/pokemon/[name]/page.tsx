@@ -23,14 +23,14 @@ interface PageProps {
 }
 
 /**
- * Generate static parameters for the first 20 Pokémon.
+ * Generate static parameters for the first 40 Pokémon.
  * This pre-renders pages at build time for better performance and SEO.
  *
  * @returns - Array of Pokémon names for static generation.
  */
 export async function generateStaticParams() {
   try {
-    const pokemonList = await getPokemonList(20, 0);
+    const pokemonList = await getPokemonList(40, 0);
     return pokemonList.results.map((pokemon) => ({
       name: pokemon.name,
     }));
@@ -100,7 +100,7 @@ export default async function PokemonDetailPage({ params }: PageProps) {
           <div>
             <h3 className="font-semibold mb-2">Types</h3>
             <div className="flex gap-2 flex-wrap">
-              {pokemon.types.map((type) => (
+              {pokemon?.types?.map((type) => (
                 <Badge key={type.type.name} variant="secondary">
                   {type.type.name}
                 </Badge>
@@ -111,7 +111,7 @@ export default async function PokemonDetailPage({ params }: PageProps) {
           <div>
             <h3 className="font-semibold mb-2">Base Stats</h3>
             <div className="space-y-2">
-              {pokemon.stats.map((stat) => (
+              {pokemon?.stats?.map((stat) => (
                 <div key={stat.stat.name} className="flex items-center gap-4">
                   <div className="w-24 text-sm text-muted-foreground">
                     {stat.stat.name.replace("-", " ")}

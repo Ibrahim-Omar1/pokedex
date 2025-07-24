@@ -21,7 +21,7 @@ interface PaginationControlsProps {
  * @param {number} props.currentPage - The currently active page number.
  * @param {number} props.totalPages - The total number of pages available.
  * @param {string} props.basePath - The base URL path for pagination links.
- * @returns {JSX.Element | null} The pagination controls or null if only one page exists.
+ * @returns - The pagination controls or null if only one page exists.
  */
 export function PaginationControls({ currentPage, totalPages, basePath }: PaginationControlsProps) {
   const searchParams = useSearchParams();
