@@ -18,7 +18,7 @@ export function BackToListButton() {
   };
 
   return (
-    <Button variant="outline" size="sm" onClick={handleBack}>
+    <Button variant="outline" size="sm" onClick={handleBack} className="cursor-pointer">
       <ArrowLeft className="w-4 h-4 mr-2" />
       Back to List
     </Button>
