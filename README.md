@@ -22,15 +22,23 @@ A modern [Next.js](https://nextjs.org) 15 + [React 19](https://react.dev/) proje
 pokedex/
   ├─ public/                # Static assets (SVGs, icons, etc)
   ├─ src/
-  │   ├─ app/               # Next.js App Router (routing, pages, layouts, API routes)
+  │   ├─ app/               # Next.js App Router (all routing, pages, layouts, API routes)
+  │   │   ├─ page.tsx       # Root page ("/")
+  │   │   ├─ layout.tsx     # Root layout (applies to all routes)
+  │   │   ├─ globals.css    # Global styles (imported in layout)
+  │   │   ├─ api/           # API routes (e.g. /api/pokemon)
+  │   │   ├─ pokemon/       # Dynamic route: /pokemon/[name]/page.tsx
+  │   │   ├─ load-more/     # Route: /load-more
+  │   │   ├─ pagination/    # Route: /pagination
+  │   │   └─ ...            # Other routes, images, and segments
   │   ├─ components/
   │   │   ├─ ui/            # shadcn/ui components (atomic, reusable UI)
-  │   │   └─ features/      # Feature-specific components
+  │   │   ├─ pokemon-card/  # Feature-specific UI components
+  │   │   └─ ...            # Other feature or layout components
   │   ├─ hooks/             # Custom React hooks
   │   ├─ lib/               # Utilities, helpers (NOT API clients)
   │   ├─ services/          # API clients, service logic (e.g. pokemonApi.ts)
   │   ├─ types/             # TypeScript type definitions
-  │   └─ context/           # React context providers
   ├─ .prettierrc            # Prettier config
   ├─ .prettierignore        # Prettier ignore
   ├─ eslint.config.mjs      # ESLint flat config
@@ -40,8 +48,11 @@ pokedex/
 
 **Notes:**
 
+- All routing, pages, layouts, and API endpoints are defined in `src/app/` using the [Next.js App Router](https://nextjs.org/docs/app/building-your-application/routing).
+- Each folder in `src/app/` can represent a route segment. `page.tsx` files are route entry points, `layout.tsx` files wrap child routes, and folders like `[name]` are dynamic segments.
+- API routes live in `src/app/api/` (e.g. `src/app/api/pokemon/`).
 - All UI primitives and design system components are in `src/components/ui` (powered by [shadcn/ui](https://ui.shadcn.com/)).
-- Feature-specific components go in `src/components/features`.
+- Feature-specific components go in `src/components/pokemon-card/` and similar folders.
 - Custom hooks, context providers, and types are organized for scalability and clarity.
 - **API clients and service logic should go in `src/services` (e.g. `src/services/pokemonApi.ts`).**
 - **All styling is handled by Tailwind CSS; no separate styles directory is needed.**
