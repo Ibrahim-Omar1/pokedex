@@ -49,3 +49,21 @@ export async function getPokemonDetails(nameOrId: string | number): Promise<Poke
     throw error;
   }
 }
+
+/**
+ * Fetches a paginated list of Pokémon for React Query pagination.
+ * @param {Object} params - The pagination parameters.
+ * @param {number} params.page - The page number (1-based).
+ * @param {number} params.limit - The number of Pokémon per page.
+ * @returns {Promise<PokemonListResponse>} The paginated Pokémon list.
+ */
+export async function fetchPokemonList({
+  page = 1,
+  limit = 20,
+}: {
+  page?: number;
+  limit?: number;
+}): Promise<PokemonListResponse> {
+  const offset = (page - 1) * limit;
+  return getPokemonList(limit, offset);
+}

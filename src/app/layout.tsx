@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
+import { ReactQueryProvider } from "@/components/providers/ReactQueryProvider";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,18 +86,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(geistSans.variable, geistMono.variable, "antialiased scroll-smooth")}>
-        <div className="min-h-screen bg-background">
-          <header className="border-b">
-            <div className="container mx-auto px-4 py-4">
-              <h1 className="text-2xl font-bold text-primary">Pokémon Browser</h1>
-            </div>
-          </header>
-          <main className="container mx-auto px-4 py-8">
+      <body
+        className={cn(
+          geistSans.variable,
+          geistMono.variable,
+          "antialiased scroll-smoot hmin-h-screen bg-background",
+        )}
+      >
+        <SiteHeader />
+        <main className="container mx-auto px-4 py-8">
+          <ReactQueryProvider>
             {children}
             <Toaster richColors position="top-center" />
-          </main>
-        </div>
+          </ReactQueryProvider>
+        </main>
       </body>
     </html>
   );
