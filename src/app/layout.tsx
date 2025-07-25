@@ -28,8 +28,9 @@ export const metadata: Metadata = {
   },
   description:
     "Explore a comprehensive Pokédex with stats, abilities, evolutions, and more for every Pokémon. Your go-to resource for all things Pokémon!",
+  metadataBase: new URL("http://localhost:3000"),
   applicationName: "Pokédex",
-  authors: [{ name: "Pokédex Team", url: "https://pokedex.com" }],
+  authors: [{ name: "Pokédex Team", url: "http://localhost:3000" }],
   generator: "Next.js",
   keywords: [
     "Pokémon",
@@ -45,15 +46,11 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://pokedex.com",
-    languages: {
-      "en-US": "https://pokedex.com/en-US",
-    },
+    canonical: "http://localhost:3000",
   },
-  manifest: "/manifest.json",
   openGraph: {
     type: "website",
-    url: "https://pokedex.com",
+    url: "http://localhost:3000",
     title: "Pokédex | Pokémon Database",
     description:
       "Explore a comprehensive Pokédex with stats, abilities, evolutions, and more for every Pokémon.",
